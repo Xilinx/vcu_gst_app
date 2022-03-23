@@ -80,6 +80,8 @@
 #define NV16_FORMAT          "NV16"
 #define XV15_FORMAT          "XV15"
 #define XV20_FORMAT          "XV20"
+#define YU24_FORMAT          "YU24"  /* YUV444 8-bit  */
+#define X403_FORMAT          "X403"  /* YUV444 10-bit */
 
 #define URI                  "Uri"
 #define FORMAT               "Format"
