@@ -1,5 +1,5 @@
 /*********************************************************************
- * Copyright (C) 2017-2021 Xilinx, Inc.
+ * Copyright (C) 2017-2022 Xilinx, Inc.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -80,6 +80,8 @@
 #define NV16_FORMAT          "NV16"
 #define XV15_FORMAT          "XV15"
 #define XV20_FORMAT          "XV20"
+#define YU24_FORMAT          "YU24"  /* YUV444 8-bit  */
+#define X403_FORMAT          "X403"  /* YUV444 10-bit */
 
 #define URI                  "Uri"
 #define FORMAT               "Format"

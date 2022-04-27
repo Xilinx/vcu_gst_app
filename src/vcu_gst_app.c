@@ -1,5 +1,5 @@
 /*********************************************************************
- * Copyright (C) 2017-2021 Xilinx, Inc.
+ * Copyright (C) 2017-2022 Xilinx, Inc.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -258,6 +258,10 @@ get_input_config () {
                     app_data.ipParam[cnt-1].format = XV15;
                 } else if (!strncasecmp (ptr, XV20_FORMAT, strlen (XV20_FORMAT))) {
                     app_data.ipParam[cnt-1].format = XV20;
+                } else if (!strncasecmp (ptr, YU24_FORMAT, strlen (YU24_FORMAT))) {
+                    app_data.ipParam[cnt-1].format = YU24;
+                } else if (!strncasecmp (ptr, X403_FORMAT, strlen (X403_FORMAT))) {
+                    app_data.ipParam[cnt-1].format = X403;
                 } else {
                     g_print ("Warning!! Format value is incorrect taking default\n");
                 }
@@ -1028,9 +1032,12 @@ print_pipeline_cmd () {
                   HDMI_6_INPUT : app_data.ipParam[cnt].device_type == HDMI_7 ? HDMI_7_INPUT : app_data.ipParam[cnt].device_type == CSI_2 ? \
                   CSI_2_INPUT : app_data.ipParam[cnt].device_type == CSI_3 ? CSI_3_INPUT : app_data.ipParam[cnt].device_type == CSI_4 ? \
                   CSI_4_INPUT : SDI_INPUT);
-        g_print ("Format : %s\n", app_data.ipParam[cnt].format == NV12 ? \
-                  NV12_FORMAT : app_data.ipParam[cnt].format == NV16 ? \
-                  NV16_FORMAT : app_data.ipParam[cnt].format == XV15 ? XV15_FORMAT : XV20_FORMAT);
+        g_print ("Format : %s\n", app_data.ipParam[cnt].format == NV12 ? NV12_FORMAT : \
+                                  app_data.ipParam[cnt].format == NV16 ? NV16_FORMAT : \
+                                  app_data.ipParam[cnt].format == XV15 ? XV15_FORMAT : \
+                                  app_data.ipParam[cnt].format == XV20 ? XV20_FORMAT : \
+                                  app_data.ipParam[cnt].format == YU24 ? YU24_FORMAT : \
+                                  X403_FORMAT);
         g_print ("Width : %d\n", app_data.ipParam[cnt].width);
         g_print ("Height : %d\n", app_data.ipParam[cnt].height);
         g_print ("Relative QP : %d\n", app_data.ipParam[cnt].relative_qp);
